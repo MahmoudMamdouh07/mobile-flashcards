@@ -1,44 +1,23 @@
-# My Universal React Project
+# Moble-Flashcards Udacity's 3rd Project of React Nanodegree
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.io/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+This is the 3rd and final project in react nanodegree provided by Udacity. This project is a mobile app built using React Native that allows a user to make decks of certain titles. add cards to each deck that has a question and answer. and a possiblity to quiz on these answers. currently the answers should be using true or false. for example: question: Am I right? ->> answer: false. No one is ever right.
 
 ## 🚀 How to use
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+- Install using create-react-native-app
 
-## Adding Native Code
+## Required Packages
 
-This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
+- redux react-redux @react-navigation/stack @react-navigation/native react-native-gesture-handler @react-navigation/bottom-tabs
 
-- Run `yarn eject` to create the native projects.
-- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
+## Components
 
-## Publishing
-
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.io/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.io/distribution/publishing-websites/).
-
-## 📝 Notes
-
-- Learn more about [Universal React](https://docs.expo.io/).
-- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+- AddCard.js => used to add a card to a specific deck
+- AddDeck.js => to add a deck to the list of decks
+- Deck.js => a deck component that is in a list of decks
+- Decks.js => the list of all decks
+- DeckInformation.js => contains the title and number of cards in a deck
+- Home.js => contains components in the bottom tab
+- Quiz.js => the quiz screen for a specific deck
+- SubmitBtn.js => a repeated button in multiple components
+- UdaciCards => the screen that contains a deck's title and ability to add new deck and to start a quiz
