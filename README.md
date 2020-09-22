@@ -2,9 +2,15 @@
 
 This is the 3rd and final project in react nanodegree provided by Udacity. This project is a mobile app built using React Native that allows a user to make decks of certain titles. add cards to each deck that has a question and answer. and a possiblity to quiz on these answers. currently the answers should be using true or false. for example: question: Am I right? ->> answer: false. No one is ever right.
 
+## Platform
+
+This app was developed and tested using expo running on Galaxy J7 Prime (Android 8.1)
+
 ## 🚀 How to use
 
-- Install using create-react-native-app
+- Install using create-react-native-app (project name)
+- navigate to the project folder, example: cd flashcards
+- use yarn start or expo start
 
 ## Required Packages
 

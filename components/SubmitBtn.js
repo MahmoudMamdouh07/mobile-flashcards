@@ -5,9 +5,9 @@ export default function SubmitBtn({ text, color, textColor, onPress }) {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[{ backgroundColor: color, borderColor: "red", color: textColor }]}
+      style={{ backgroundColor: color, marginTop: 20 }}
     >
-      <Text>{text}</Text>
+      <Text style={{ color: textColor }}>{text}</Text>
     </TouchableOpacity>
   );
 }

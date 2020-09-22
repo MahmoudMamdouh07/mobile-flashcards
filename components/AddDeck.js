@@ -39,6 +39,7 @@ class AddDeck extends Component {
     this.setState(() => ({
       title: "",
     }));
+    this.props.navigation.navigate("UdaciCards", { deckId: deck.title });
   };
   render() {
     const { title } = this.state;

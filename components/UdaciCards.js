@@ -26,7 +26,7 @@ class UdaciCards extends Component {
               })
             }
             color="white"
-            textColor="black"
+            textColor="red"
           />
           <SubmitBtn
             text="Start Quiz"
@@ -37,7 +37,7 @@ class UdaciCards extends Component {
               })
             }
             color="black"
-            textColor="white"
+            textColor="#fff"
           />
         </View>
       </View>
