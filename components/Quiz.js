@@ -7,6 +7,7 @@ class Quiz extends Component {
     QuestionNumber: 1,
     response: "starter code",
     totalCorrectAnswers: 0,
+    showAnswer: false,
   };
   handleBtn = (choice, answer) => {
     if (answer === choice) {
@@ -14,12 +15,14 @@ class Quiz extends Component {
         response: "Yess!",
         totalCorrectAnswers: currState.totalCorrectAnswers + 1,
         QuestionNumber: currState.QuestionNumber,
+        showAnswer: false,
       }));
     } else {
       this.setState((currState) => ({
         response: "No!",
         totalCorrectAnswers: currState.totalCorrectAnswers,
         QuestionNumber: currState.QuestionNumber,
+        showAnswer: false,
       }));
     }
   };
@@ -29,11 +32,26 @@ class Quiz extends Component {
       response: "",
       totalCorrectAnswers: currState.totalCorrectAnswers,
       QuestionNumber: currState.QuestionNumber + 1,
+      showAnswer: false,
     }));
+  };
+  showAnswer = () => {
+    this.setState((currState) => ({
+      ...currState,
+      showAnswer: !currState.showAnswer,
+    }));
+  };
+  restartQuiz = (deckId) => {
+    this.props.navigation.navigate("UdaciCards", { deckId });
   };
   render() {
     const { deck } = this.props.route.params;
-    const { QuestionNumber, response, totalCorrectAnswers } = this.state;
+    const {
+      QuestionNumber,
+      response,
+      totalCorrectAnswers,
+      showAnswer,
+    } = this.state;
     return (
       <View>
         <Text>
@@ -43,6 +61,15 @@ class Quiz extends Component {
         <View>
           {response === "" || response === "starter code" ? (
             <View>
+              <SubmitBtn
+                text="Show Answer"
+                textColor="white"
+                color="purple"
+                onPress={this.showAnswer}
+              />
+              {showAnswer && (
+                <Text>{deck.questions[QuestionNumber - 1].answer}</Text>
+              )}
               <SubmitBtn
                 onPress={() =>
                   this.handleBtn(
@@ -63,6 +90,12 @@ class Quiz extends Component {
                 }
                 text="Wrong"
                 color="red"
+                textColor="white"
+              />
+              <SubmitBtn
+                onPress={() => this.restartQuiz(deck.title)}
+                text="Restart Quiz"
+                color="blue"
                 textColor="white"
               />
             </View>

@@ -47,9 +47,14 @@ class Decks extends Component {
               />
             ))}
         </ScrollView>
-        <TouchableOpacity onPress={this.submit}>
-          <Text>Delete</Text>
-        </TouchableOpacity>
+
+        {decks !== null && Object.keys(decks).length > 0 ? (
+          <TouchableOpacity onPress={this.submit}>
+            <Text>Delete</Text>
+          </TouchableOpacity>
+        ) : (
+          <Text>No decks to show, please add decks</Text>
+        )}
       </View>
     );
   }
